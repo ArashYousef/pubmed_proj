@@ -89,7 +89,6 @@ print("Writing records to XML please wait")
 with open("test.txt") as trans_handle:
     for record in Medline.parse(trans_handle):
         title = record["TI"]
-        print("\n")
         if "AB" in record:
             abstract = record["AB"]
         else:
