@@ -1,11 +1,11 @@
-from Bio import Entrez
+from Bio import Entrez #Initialize Library
 from Bio import Medline
 import time
-Entrez.email = "yousefa@colorado.edu"
+Entrez.email = "yousefa@colorado.edu" #Always tell biopython who you are
 
-name = ""
+name = "" #User input for their choice of author
 
-print("Choose faculty member:\n")
+print("Choose faculty member:\n") #Display choices
 print("1: Natalie Ahn\n")
 print("2: Kristi Anseth\n")
 print("3: Stephanie Bryant\n")
@@ -24,7 +24,7 @@ print("15: Orit Peleg\n")
 print("16: John Rinn\n")
 print("17: Sara Sawyer\n")
 
-choice = input("Enter Corresponding Number:")
+choice = input("Enter Corresponding Number:") #Read user input and assign choice to name
 if choice == 1:
     name = "Natalie Ahn[FAU]"
 elif choice == 2:
@@ -62,14 +62,17 @@ elif choice == 17:
 else:
     "Not a valid input"
 
-search_results = Entrez.read(Entrez.esearch(db="pubmed", term = name))
+search_results = Entrez.read(Entrez.esearch(db="pubmed", term = name)) #Search PubMed data base for all corresponding search results
 
-idList = search_results["IdList"]
+idList = search_results["IdList"] #Save search results into an ID List
 
-count = int(search_results["Count"])
-print("Found %i results" % count)
-out_handle = open("test.txt", "w")
+count = int(search_results["Count"]) #Save total number of results into count
+print("Found %i results" % count) #Print out how many results were found
+out_handle = open("test.txt", "w") #Create test.txt to write results to
 
+
+#The following loop fetches all the records stored in idList
+#Writes fetched result into test.txt
 for i in range(0, count):
     print("Downloading record %i of %i" % (i+1, count))
     fetch_handle = Entrez.efetch(db = "pubmed", id = idList, rettype = "medline", retmode = "text")
@@ -79,8 +82,9 @@ for i in range(0, count):
     out_handle.write(data)
 out_handle.close()
 
-out_handle_final = open("output.xml", "w")
+out_handle_final = open("output.xml", "w") #Create output.xml for the final output
 
+#The following function parses through test.txt and outputs the title and abstract of each record into output.xml
 print("Writing records to XML please wait")
 with open("test.txt") as trans_handle:
     for record in Medline.parse(trans_handle):
