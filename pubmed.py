@@ -26,39 +26,39 @@ print("17: Sara Sawyer\n")
 
 choice = input("Enter Corresponding Number:\n") #Read user input and assign choice to name
 if choice == 1:
-    name = "Natalie Ahn[FAU]"
+    name = " Ahn, Natalie[FAU]"
 elif choice == 2:
-    name = "Kristi Anseth[FAU]"
+    name = "Anseth, Kristi[FAU]"
 elif choice == 3:
-    name = "Stephanie Bryant[FAU]"
+    name = "Bryant, Stephanie[FAU]"
 elif choice == 4:
-    name = "Tom Cech[FAU]"
+    name = " Cech, Tom[FAU]"
 elif choice == 5:
-    name = "Edward Chuong[FAU]"
+    name = "Chuong, Edward[FAU]"
 elif choice == 6:
-    name = "Aaron Clauset[FAU]"
+    name = "Clauset, Aaron[FAU]"
 elif choice == 7:
-    name = "Robin Dowell[FAU]"
+    name = "Dowell, Robin[FAU]"
 elif choice == 8:
-    name = "Robert Garcea[FAU]"
+    name = "Garcea, Robert[FAU]"
 elif choice == 9:
-    name = "Loren Hough[FAU]"
+    name = "Hough, Loren[FAU]"
 elif choice == 10:
-    name = "Joel Kralj[FAU]"
+    name = "Kralj, Joel[FAU]"
 elif choice == 11:
-    name = "Daniel Larremore[FAU]"
+    name = "Larremore, Daniel[FAU]"
 elif choice == 12:
-    name = "Ryan Layer[FAU]"
+    name = "Layer, Ryan[FAU]"
 elif choice == 13:
-    name = "Leslie Leinwand[FAU]"
+    name = "Leinwand, Leslie[FAU]"
 elif choice == 14:
-    name = "Amy Palmer[FAU]"
+    name = "Palmer, Amy[FAU]"
 elif choice == 15:
-    name = "Orit Peleg[FAU]"
+    name = "Peleg, Orit[FAU]"
 elif choice == 16:
-    name = "John Rinn[FAU]"
+    name = "Rinn, John[FAU]"
 elif choice == 17:
-    name = "Sara Sawyer[FAU]"
+    name = "Sawyer, Sara[FAU]"
 else:
     "Not a valid input"
 
