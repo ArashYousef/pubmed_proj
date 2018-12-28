@@ -24,7 +24,7 @@ print("15: Orit Peleg\n")
 print("16: John Rinn\n")
 print("17: Sara Sawyer\n")
 
-choice = input("Enter Corresponding Number:") #Read user input and assign choice to name
+choice = input("Enter Corresponding Number:\n") #Read user input and assign choice to name
 if choice == 1:
     name = "Natalie Ahn[FAU]"
 elif choice == 2:
@@ -67,7 +67,7 @@ search_results = Entrez.read(Entrez.esearch(db="pubmed", term = name)) #Search P
 idList = search_results["IdList"] #Save search results into an ID List
 
 count = int(search_results["Count"]) #Save total number of results into count
-print("Found %i results" % count) #Print out how many results were found
+print("\nFound %i results" % count) #Print out how many results were found
 out_handle = open("test.txt", "w") #Create test.txt to write results to
 
 
@@ -85,7 +85,7 @@ out_handle.close()
 out_handle_final = open("output.xml", "w") #Create output.xml for the final output
 
 #The following function parses through test.txt and outputs the title and abstract of each record into output.xml
-print("Writing records to XML please wait")
+print("\nWriting records to XML please wait\n")
 with open("test.txt") as trans_handle:
     for record in Medline.parse(trans_handle):
         title = record["TI"]
@@ -99,3 +99,5 @@ with open("test.txt") as trans_handle:
         out_handle_final.write("\n")
         out_handle_final.write("\n")
 out_handle_final.close()
+
+print("Finished\n")
